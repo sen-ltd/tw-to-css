@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind → CSS</title>
+    <meta name="description" content="Paste Tailwind utility classes, get the equivalent vanilla CSS — with a live preview. No build step, no dependencies, ~500 lines of vanilla JS." />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Tailwind <span class="arrow">→</span> CSS</h1>
+      <p class="subtitle">
+        Paste Tailwind utility classes. See the equivalent <strong>vanilla CSS</strong> and a live preview.
+        Implementation is ~500 lines of vanilla JS: a tokenizer, a lookup table for the default theme, and a one-handler-per-utility map.
+      </p>
+    </header>
+
+    <main>
+      <section class="panel">
+        <h2>Input</h2>
+        <textarea id="input" spellcheck="false" placeholder="Paste Tailwind classes…">bg-blue-500 text-white px-6 py-3 rounded-lg font-bold shadow-md</textarea>
+        <div class="presets">
+          <span>Try:</span>
+          <button class="preset" data-classes="bg-blue-500 text-white px-6 py-3 rounded-lg font-bold shadow-md">Button</button>
+          <button class="preset" data-classes="flex items-center justify-between p-4 bg-gray-800 text-white">Navbar</button>
+          <button class="preset" data-classes="bg-white rounded-xl shadow-lg p-6 border border-gray-200">Card</button>
+          <button class="preset" data-classes="text-3xl font-bold text-gray-900 mb-4">Heading</button>
+          <button class="preset" data-classes="rounded-full bg-pink-500 text-white px-3 py-1 text-sm">Pill badge</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Preview</h2>
+        <div class="preview-stage">
+          <div id="preview" class="preview-target">Preview</div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Generated CSS</h2>
+        <pre id="output" class="output"></pre>
+        <button id="copyBtn" class="copy-btn">Copy CSS</button>
+      </section>
+
+      <section id="warn" class="warn" hidden>
+        <h3>Unrecognised classes</h3>
+        <p>These classes aren't in this tool's subset of Tailwind v3. They're shown for transparency — the goal isn't to reimplement all of Tailwind, it's to explain how the common ones map to CSS.</p>
+        <ul id="warnList"></ul>
+      </section>
+
+      <footer>
+        <p>
+          Pure parser in <code>parser.js</code> + lookup tables in <code>tailwind-data.js</code> (<strong>43 tests</strong>, <code>node --test</code>).
+          UI glue in <code>app.js</code>. No build step. No dependencies. No Tailwind runtime — every value comes from the lookup tables.
+        </p>
+      </footer>
+    </main>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
