@@ -43,3 +43,10 @@ app.js            ← UI グルー（入力 → parser → preview / output）
 ## ライセンス
 
 MIT. See [LICENSE](./LICENSE).
+
+<!-- sen-publish:links -->
+## Links
+
+- 🌐 Demo: https://sen.ltd/portfolio/tw-to-css/
+- 📝 dev.to: https://dev.to/sendotltd/building-a-mini-tailwind-to-css-converter-how-utility-class-names-map-to-real-css-46ak
+<!-- /sen-publish:links -->
