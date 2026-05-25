@@ -48,5 +48,6 @@ MIT. See [LICENSE](./LICENSE).
 ## Links
 
 - 🌐 Demo: https://sen.ltd/portfolio/tw-to-css/
+- 📝 記事: https://qiita.com/sen-ltd/items/727f23ea8fa9e582ea3a
 - 📝 dev.to: https://dev.to/sendotltd/building-a-mini-tailwind-to-css-converter-how-utility-class-names-map-to-real-css-46ak
 <!-- /sen-publish:links -->
